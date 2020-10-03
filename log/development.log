@@ -7001,3 +7001,58 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 17888)
 
 
+Started GET "/" for ::1 at 2020-10-03 12:32:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 90)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 789)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 98)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 17892)
+
+
+Started GET "/" for ::1 at 2020-10-03 12:32:12 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 514)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 0.0ms | Allocations: 16089)
+
+
+Started GET "/" for ::1 at 2020-10-03 12:32:13 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 513)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 86ms (Views: 83.3ms | ActiveRecord: 0.0ms | Allocations: 16088)
+
+
+Started GET "/" for ::1 at 2020-10-03 12:32:14 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 513)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 0.0ms | Allocations: 16083)
+
+
+Started GET "/home/minor" for ::1 at 2020-10-03 12:32:15 -0500
+Processing by HomeController#minor as HTML
+  Rendering home/minor.html.erb within layouts/application
+  Rendered home/minor.html.erb within layouts/application (Duration: 0.8ms | Allocations: 97)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 514)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.0ms | Allocations: 16310)
+
+
+Started GET "/" for ::1 at 2020-10-03 12:32:16 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 3.2ms | Allocations: 513)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.0ms | Allocations: 16084)
+
+
