@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-resources :noticias
+  devise_for :users
+  resources :noticias
+  resources :users
 
-  root to: 'home#index'
+  root to: 'noticias#index'
 
 end
