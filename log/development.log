@@ -22369,3 +22369,151 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 69ms (Views: 67.1ms | ActiveRecord: 0.2ms | Allocations: 31657)
 
 
+Started GET "/" for ::1 at 2020-10-04 12:44:50 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 5640)
+Started GET "/" for ::1 at 2020-10-04 12:44:54 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (1.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2293)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 1039)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 221)
+Completed 200 OK in 4801ms (Views: 4766.6ms | ActiveRecord: 2.3ms | Allocations: 542692)
+
+
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 638)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 54)
+Completed 200 OK in 927ms (Views: 919.9ms | ActiveRecord: 1.5ms | Allocations: 340828)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-10-04 12:45:03 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s8coR1TgGNbfViOrnUepS3uOVPIcbmgt5mf3KTIiGlOdf8mZ0eHyQTl2TNAfD0r7zjeumg8e+i6bVXcM3RlHaQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.2ms | Allocations: 5127)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:45:03 -0500
+Processing by NoticiasController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 12:45:03 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 554)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 61.4ms | Allocations: 16119)
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.0ms | Allocations: 33373)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 12:45:08 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0aELYbaYyqBBJI/igj6BcjsIIPW7XIbouN/4pjnn0kyscDZwlnGQjBakygpAB8L5HnAVOT0eTc3W2IeH45TaXg==", "user"=>{"email"=>"jhonrivego@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jhonrivego@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 354ms (ActiveRecord: 0.5ms | Allocations: 4740)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:45:08 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 771)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 638)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 55)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.3ms | Allocations: 18692)
+
+
+Started GET "/users/new" for ::1 at 2020-10-04 12:45:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 33.1ms | Allocations: 13916)
+  Rendered users/new.html.erb within layouts/application (Duration: 34.3ms | Allocations: 14208)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 637)
+  Rendered layouts/_topnavbar.html.erb (Duration: 1.0ms | Allocations: 55)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.2ms | Allocations: 32333)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:47:53 -0500
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 5702)
+Started GET "/" for ::1 at 2020-10-04 12:47:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 790)
+  Rendered layouts/_navigation.html.erb (Duration: 3.0ms | Allocations: 1015)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.9ms | Allocations: 221)
+Completed 200 OK in 8630ms (Views: 8510.0ms | ActiveRecord: 2.9ms | Allocations: 509585)
+
+
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 614)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 54)
+Completed 200 OK in 5334ms (Views: 5329.0ms | ActiveRecord: 0.8ms | Allocations: 367441)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-10-04 12:48:15 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q2S/t3uFKnRBme4x38E/9NunthHEdglVTwynbrLBYmUh+zeoUcVK8bg+DNZnGUcX0C5obXV/Z0OsiT+nEUolcg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 136ms (ActiveRecord: 0.1ms | Allocations: 7890)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:48:15 -0500
+Processing by NoticiasController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 12:48:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 545)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 200.6ms | Allocations: 23446)
+Completed 200 OK in 257ms (Views: 239.7ms | ActiveRecord: 0.0ms | Allocations: 39579)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 12:48:25 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"M1yBNeNLdkjtXusW2q2MWD2tCobVZrr24Z2Hwm79FSeXS8/CJ9PGgT64memsv0ImuIrfyB/VLE1Of5d6zwNWtw==", "user"=>{"email"=>"admin1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 467ms (ActiveRecord: 0.3ms | Allocations: 6000)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:48:25 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 771)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 615)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 55)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.3ms | Allocations: 17288)
+
+
