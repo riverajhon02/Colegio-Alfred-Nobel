@@ -7,10 +7,9 @@
                         <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
                     </div>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                       
-                        <%= link_to  current_user.nombres + " "+ current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-center text-capitalize' %>
+                        <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+                        <span class="text-white"><%= current_user.email%></span>
                     </a>
-                    
                 </div>
                 <div class="logo-element">
                     NEOPA
@@ -19,17 +18,9 @@
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a><%= link_to  noticias_path do%>
-                        <i class="far fa-newspaper"></i>
-                        Todas noticias
-                    <% end %>
-                    </a></li>
+                    <li><a><%= link_to "Últimas noticias", noticias_path %></a></li>
 
-                    <li><a><%= link_to new_noticia_path do %>
-                        <i class="fas fa-plus"></i>
-                    Crear noticias
-                    <% end %>
-                    </a></li>
+                    <li><a><%= link_to "Crear noticia", new_noticia_path%></a></li>
                     
                 </ul>
             </li>

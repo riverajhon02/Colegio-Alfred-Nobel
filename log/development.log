@@ -22369,3 +22369,1522 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 69ms (Views: 67.1ms | ActiveRecord: 0.2ms | Allocations: 31657)
 
 
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-10-04 12:47:08 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticiasController#index as HTML
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms | Allocations: 1738)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 12:47:08 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 15.6ms | Allocations: 560)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9281.1ms | Allocations: 334025)
+Completed 200 OK in 10186ms (Views: 10139.1ms | ActiveRecord: 3.7ms | Allocations: 479260)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 12:47:31 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 120)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 62.8ms | Allocations: 3775)
+Completed 200 OK in 104ms (Views: 101.2ms | ActiveRecord: 0.0ms | Allocations: 20763)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (19.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mateo@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mateo@gmail.com"], ["encrypted_password", "$2a$12$eE6n/mfjKs7BoLsQ6LsMzOvShQfPIcSEiHDMZzz1TiINBym.CLya."], ["created_at", "2020-10-04 17:49:58.603889"], ["updated_at", "2020-10-04 17:49:58.603889"]]
+  [1m[35m (240.9ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/sign_in" for ::1 at 2020-10-04 12:50:13 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"r+odN13EC8EPV42ZokIcpiSklqbC+zWK6vsWmp92hUEFuP4d7eKY34+i0/WtBYC6VnIS+HtNEzIxiG9u6YkJGg==", "user"=>{"email"=>"mateo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mateo@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 471ms (ActiveRecord: 1.0ms | Allocations: 5361)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:50:13 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (27.9ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 92.2ms | Allocations: 5451)
+  Rendered layouts/_navigation.html.erb (Duration: 3.0ms | Allocations: 2191)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 29.7ms | Allocations: 25800)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+     8:                     </div>
+     9:                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    10:                        
+    11:                         <%= link_to  current_user.nombres + " "+ current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-center text-capitalize' %>
+    12:                     </a>
+    13:                     
+    14:                 </div>
+  
+app/views/layouts/_navigation.html.erb:11
+app/views/layouts/application.html.erb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mateo5@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "nombres", "apellidos") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "mateo5@gmail.com"], ["encrypted_password", "$2a$12$0mD2tqxSF6C0/mKS4XyQo.tV7C5j6q47T58e65mB9Kow3BECiYzCO"], ["created_at", "2020-10-04 17:51:44.548412"], ["updated_at", "2020-10-04 17:51:44.548412"], ["nombres", "Mateo de jesus"], ["apellidos", "Balza Valega"]]
+  [1m[35m (207.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/sign_in" for ::1 at 2020-10-04 12:51:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 0.6ms | Allocations: 1853)
+
+
+Started GET "/" for ::1 at 2020-10-04 12:51:55 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 770)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 1825)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms | Allocations: 19740)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+     8:                     </div>
+     9:                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    10:                        
+    11:                         <%= link_to  current_user.nombres + " "+ current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-center text-capitalize' %>
+    12:                     </a>
+    13:                     
+    14:                 </div>
+  
+app/views/layouts/_navigation.html.erb:11
+app/views/layouts/application.html.erb:30
+Started GET "/" for ::1 at 2020-10-04 12:52:12 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 5592)
+  Rendered layouts/_navigation.html.erb (Duration: 5.0ms | Allocations: 2543)
+Completed 500 Internal Server Error in 374ms (ActiveRecord: 1.6ms | Allocations: 114563)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+     8:                     </div>
+     9:                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    10:                        
+    11:                         <%= link_to  current_user.nombres + " "+ current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-center text-capitalize' %>
+    12:                     </a>
+    13:                     
+    14:                 </div>
+  
+app/views/layouts/_navigation.html.erb:11
+app/views/layouts/application.html.erb:30
+Started GET "/" for ::1 at 2020-10-04 12:52:21 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 771)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 1826)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.4ms | Allocations: 19826)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+     8:                     </div>
+     9:                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    10:                        
+    11:                         <%= link_to  current_user.nombres + " "+ current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-center text-capitalize' %>
+    12:                     </a>
+    13:                     
+    14:                 </div>
+  
+app/views/layouts/_navigation.html.erb:11
+app/views/layouts/application.html.erb:30
+Started GET "/" for ::1 at 2020-10-04 12:53:28 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 986)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 1820)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.7ms | Allocations: 21388)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 0)):
+     8:                     </div>
+     9:                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    10:                        
+    11:                         <%= link_to  current_user.nombres current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-center text-capitalize' %>
+    12:                     </a>
+    13:                     
+    14:                 </div>
+  
+app/views/layouts/_navigation.html.erb:11
+app/views/layouts/application.html.erb:30
+Started GET "/" for ::1 at 2020-10-04 13:01:45 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.8ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 1005)
+  Rendered layouts/_navigation.html.erb (Duration: 2.4ms | Allocations: 1332)
+Completed 500 Internal Server Error in 369ms (ActiveRecord: 1.4ms | Allocations: 20940)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="d-flex justify-content-center">
+                        <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+                    </div>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                       
+                       <span class="text-muted text-xs block"><%= link_to  current_user.nombres %><%= current_user.apellidos, user_path(current_user.id) %></span>
+                       <!--<span>, class:'block m-t-xs font-bold text-center text-capitalize' %></span>-->
+                    </a>
+                    
+                </div>
+                <div class="logo-element">
+                    NEOPA
+                </div>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  noticias_path do%>
+                        <i class="far fa-newspaper"></i>
+                        Todas noticias
+                    <% end %>
+                    </a></li>
+
+                    <li><a><%= link_to new_noticia_path do %>
+                        <i class="fas fa-plus"></i>
+                    Crear noticias
+                    <% end %>
+                    </a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+                    
+                </ul>
+            </li>
+            <li class="<%= 'active' if current_page?('/home/minor') %>">
+                <%= link_to "/home/minor" do %>
+                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+):
+1:    <nav class="navbar-default navbar-static-side" role="navigation">
+2:        <div class="sidebar-collapse">
+3:            <ul class="nav metismenu" id="side-menu">
+4:                <li class="nav-header">
+5:                    <div class="dropdown profile-element">
+6:                        <div class="d-flex justify-content-center">
+7:                            <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+8:                        </div>
+9:                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+10:                           
+11:                           <span class="text-muted text-xs block"><%= link_to  current_user.nombres %><%= current_user.apellidos, user_path(current_user.id) %></span>
+12:                           <!--<span>, class:'block m-t-xs font-bold text-center text-capitalize' %></span>-->
+13:                        </a>
+14:                        
+15:                    </div>
+16:                    <div class="logo-element">
+17:                        NEOPA
+18:                    </div>
+19:                </li>
+20:                <li>
+21:                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+22:                    <ul class="nav nav-second-level collapse">
+23:                        <li><a><%= link_to  noticias_path do%>
+24:                            <i class="far fa-newspaper"></i>
+25:                            Todas noticias
+26:                        <% end %>
+27:                        </a></li>
+28:    
+29:                        <li><a><%= link_to new_noticia_path do %>
+30:                            <i class="fas fa-plus"></i>
+31:                        Crear noticias
+32:                        <% end %>
+33:                        </a></li>
+34:                        
+35:                    </ul>
+36:                </li>
+37:                <li>
+38:                    <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+39:                    <ul class="nav nav-second-level collapse">
+40:                        <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+41:                        
+42:                    </ul>
+43:                </li>
+44:                <li class="<%= 'active' if current_page?('/home/minor') %>">
+45:                    <%= link_to "/home/minor" do %>
+46:                    <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+47:                    <% end %>
+48:                </li>
+49:            </ul>
+50:    
+51:        </div>
+52:    </nav>
+  
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/layouts/_navigation.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/layouts/_navigation.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/layouts/_navigation.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/layouts/_navigation.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/layouts/_navigation.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/layouts/_navigation.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:30
+Started GET "/" for ::1 at 2020-10-04 13:02:20 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 985)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 970)
+  Rendered layouts/_topnavbar.html.erb (Duration: 47.8ms | Allocations: 222)
+Completed 200 OK in 104ms (Views: 93.8ms | ActiveRecord: 0.7ms | Allocations: 20996)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-10-04 13:02:29 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qTZSA6dQh/hKlwo5fTIGugM/Z3GIFYWqQSyZyW0nRcDlcokY3nmRzMI2nvqhEOLjGTcOozA+Nx0EycjjT6UINw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 789ms (ActiveRecord: 0.4ms | Allocations: 4670)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:02:30 -0500
+Processing by NoticiasController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms | Allocations: 307)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:02:30 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 22.4ms | Allocations: 550)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 576.4ms | Allocations: 16188)
+Completed 200 OK in 680ms (Views: 658.8ms | ActiveRecord: 0.0ms | Allocations: 33261)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 13:03:23 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZOPobFoYb1s7RLyXWPX/HlV3FglavgUW38L8CjVQ/9vK4dWM3TX41FD6mO9X6VX/vJc8zm31ZRbRMORzMQs1YQ==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mateo5@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 608ms (ActiveRecord: 1.5ms | Allocations: 6464)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:03:24 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 770)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 601)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 55)
+Completed 200 OK in 32ms (Views: 23.5ms | ActiveRecord: 0.9ms | Allocations: 18667)
+
+
+Started GET "/users/new" for ::1 at 2020-10-04 13:03:35 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 78.5ms | Allocations: 13977)
+  Rendered users/new.html.erb within layouts/application (Duration: 108.1ms | Allocations: 14270)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 12.4ms | Allocations: 600)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 55)
+Completed 200 OK in 153ms (Views: 148.7ms | ActiveRecord: 0.1ms | Allocations: 32372)
+
+
+Started GET "/users/new" for ::1 at 2020-10-04 13:05:19 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 57.2ms | Allocations: 13096)
+  Rendered users/new.html.erb within layouts/application (Duration: 60.3ms | Allocations: 13392)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 995)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 209)
+Completed 200 OK in 99ms (Views: 95.9ms | ActiveRecord: 0.3ms | Allocations: 32867)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:05:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 30.2ms | Allocations: 86)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 663)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 55)
+Completed 200 OK in 93ms (Views: 84.9ms | ActiveRecord: 0.8ms | Allocations: 18277)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:05:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 654)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 54)
+Completed 200 OK in 63ms (Views: 55.7ms | ActiveRecord: 0.9ms | Allocations: 17901)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:05:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 3.5ms | Allocations: 654)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 54)
+Completed 200 OK in 77ms (Views: 70.4ms | ActiveRecord: 0.8ms | Allocations: 17904)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:05:28 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 654)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 54)
+Completed 200 OK in 77ms (Views: 71.0ms | ActiveRecord: 0.5ms | Allocations: 17908)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:06:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 88)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 1019)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.9ms | Allocations: 209)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.3ms | Allocations: 20077)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:07:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 83)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 1021)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 209)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.3ms | Allocations: 20062)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:07:21 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 661)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 54)
+Completed 200 OK in 57ms (Views: 50.8ms | ActiveRecord: 0.6ms | Allocations: 17912)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:10:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 114.3ms | Allocations: 83)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 2128.6ms | Allocations: 1397)
+Completed 500 Internal Server Error in 3367ms (ActiveRecord: 0.9ms | Allocations: 19999)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="d-flex justify-content-center">
+                        <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+                    </div>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+                        <span class="text-muted text-xs block"><%= current_user.email<b class="caret"></b></span>
+                    </a>
+                    
+                </div>
+                <div class="logo-element">
+                    NEOPA
+                </div>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  noticias_path do%>
+                        <i class="far fa-newspaper"></i>
+                        Todas noticias
+                    <% end %>
+                    </a></li>
+
+                    <li><a><%= link_to new_noticia_path do %>
+                        <i class="fas fa-plus"></i>
+                    Crear noticias
+                    <% end %>
+                    </a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+                    
+                </ul>
+            </li>
+            <li class="<%= 'active' if current_page?('/home/minor') %>">
+                <%= link_to "/home/minor" do %>
+                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+):
+1:    <nav class="navbar-default navbar-static-side" role="navigation">
+2:        <div class="sidebar-collapse">
+3:            <ul class="nav metismenu" id="side-menu">
+4:                <li class="nav-header">
+5:                    <div class="dropdown profile-element">
+6:                        <div class="d-flex justify-content-center">
+7:                            <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+8:                        </div>
+9:                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+10:                            <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+11:                            <span class="text-muted text-xs block"><%= current_user.email<b class="caret"></b></span>
+12:                        </a>
+13:                        
+14:                    </div>
+15:                    <div class="logo-element">
+16:                        NEOPA
+17:                    </div>
+18:                </li>
+19:                <li>
+20:                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+21:                    <ul class="nav nav-second-level collapse">
+22:                        <li><a><%= link_to  noticias_path do%>
+23:                            <i class="far fa-newspaper"></i>
+24:                            Todas noticias
+25:                        <% end %>
+26:                        </a></li>
+27:    
+28:                        <li><a><%= link_to new_noticia_path do %>
+29:                            <i class="fas fa-plus"></i>
+30:                        Crear noticias
+31:                        <% end %>
+32:                        </a></li>
+33:                        
+34:                    </ul>
+35:                </li>
+36:                <li>
+37:                    <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+38:                    <ul class="nav nav-second-level collapse">
+39:                        <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+40:                        
+41:                    </ul>
+42:                </li>
+43:                <li class="<%= 'active' if current_page?('/home/minor') %>">
+44:                    <%= link_to "/home/minor" do %>
+45:                    <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+46:                    <% end %>
+47:                </li>
+48:            </ul>
+49:    
+50:        </div>
+51:    </nav>
+  
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected class, expecting do or '{' or '('
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:11: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:12: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:14: unknown regexp options - dv
+app/views/layouts/_navigation.html.erb:15: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:17: syntax error, unexpected '<', expecting end
+app/views/layouts/_navigation.html.erb:18: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:19: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp option - a
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:53: syntax error, unexpected end, expecting end-of-input
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected class, expecting do or '{' or '('
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:11: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:12: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:14: unknown regexp options - dv
+app/views/layouts/_navigation.html.erb:15: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:17: syntax error, unexpected '<', expecting end
+app/views/layouts/_navigation.html.erb:18: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:19: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp option - a
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:53: syntax error, unexpected end, expecting end-of-input
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected class, expecting do or '{' or '('
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:11: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:12: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:14: unknown regexp options - dv
+app/views/layouts/_navigation.html.erb:15: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:17: syntax error, unexpected '<', expecting end
+app/views/layouts/_navigation.html.erb:18: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:19: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp option - a
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:53: syntax error, unexpected end, expecting end-of-input
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected class, expecting do or '{' or '('
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:11: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:12: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:14: unknown regexp options - dv
+app/views/layouts/_navigation.html.erb:15: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:17: syntax error, unexpected '<', expecting end
+app/views/layouts/_navigation.html.erb:18: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:19: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp option - a
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:53: syntax error, unexpected end, expecting end-of-input
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected class, expecting do or '{' or '('
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:11: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:12: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:14: unknown regexp options - dv
+app/views/layouts/_navigation.html.erb:15: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:17: syntax error, unexpected '<', expecting end
+app/views/layouts/_navigation.html.erb:18: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:19: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp option - a
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:53: syntax error, unexpected end, expecting end-of-input
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected class, expecting do or '{' or '('
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:11: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:12: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:14: unknown regexp options - dv
+app/views/layouts/_navigation.html.erb:15: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:17: syntax error, unexpected '<', expecting end
+app/views/layouts/_navigation.html.erb:18: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:19: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp options - pa
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:20: unknown regexp option - a
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:22: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:53: syntax error, unexpected end, expecting end-of-input
+app/views/layouts/application.html.erb:30
+Started GET "/users/5" for ::1 at 2020-10-04 13:11:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 83)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 4.9ms | Allocations: 1045)
+  Rendered layouts/_topnavbar.html.erb (Duration: 19.1ms | Allocations: 209)
+Completed 200 OK in 84ms (Views: 72.9ms | ActiveRecord: 1.3ms | Allocations: 20099)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:12:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 83)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 15.8ms | Allocations: 1048)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 214)
+Completed 200 OK in 73ms (Views: 62.7ms | ActiveRecord: 0.7ms | Allocations: 20100)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:12:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 4)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 666)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 54)
+Completed 200 OK in 69ms (Views: 62.1ms | ActiveRecord: 0.6ms | Allocations: 17919)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:12:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 83)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 1025)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 209)
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 0.5ms | Allocations: 20072)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:12:37 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 661)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 54)
+Completed 200 OK in 70ms (Views: 64.5ms | ActiveRecord: 0.8ms | Allocations: 17914)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:13:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 83)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 3.6ms | Allocations: 1053)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 209)
+Completed 200 OK in 85ms (Views: 75.4ms | ActiveRecord: 0.5ms | Allocations: 20104)
+
+
+Started GET "/users/5" for ::1 at 2020-10-04 13:14:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 83)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1352)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.5ms | Allocations: 19948)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="d-flex justify-content-center">
+                        <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+                    </div>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+                        <%= current_user.email, class: "text-white" %>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    NEOPA
+                </div>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  noticias_path do%>
+                        <i class="far fa-newspaper"></i>
+                        Todas noticias
+                    <% end %>
+                    </a></li>
+
+                    <li><a><%= link_to new_noticia_path do %>
+                        <i class="fas fa-plus"></i>
+                    Crear noticias
+                    <% end %>
+                    </a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+                    
+                </ul>
+            </li>
+            <li class="<%= 'active' if current_page?('/home/minor') %>">
+                <%= link_to "/home/minor" do %>
+                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+):
+1:    <nav class="navbar-default navbar-static-side" role="navigation">
+2:        <div class="sidebar-collapse">
+3:            <ul class="nav metismenu" id="side-menu">
+4:                <li class="nav-header">
+5:                    <div class="dropdown profile-element">
+6:                        <div class="d-flex justify-content-center">
+7:                            <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+8:                        </div>
+9:                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+10:                            <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+11:                            <%= current_user.email, class: "text-white" %>
+12:                        </a>
+13:                    </div>
+14:                    <div class="logo-element">
+15:                        NEOPA
+16:                    </div>
+17:                </li>
+18:                <li>
+19:                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+20:                    <ul class="nav nav-second-level collapse">
+21:                        <li><a><%= link_to  noticias_path do%>
+22:                            <i class="far fa-newspaper"></i>
+23:                            Todas noticias
+24:                        <% end %>
+25:                        </a></li>
+26:    
+27:                        <li><a><%= link_to new_noticia_path do %>
+28:                            <i class="fas fa-plus"></i>
+29:                        Crear noticias
+30:                        <% end %>
+31:                        </a></li>
+32:                        
+33:                    </ul>
+34:                </li>
+35:                <li>
+36:                    <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+37:                    <ul class="nav nav-second-level collapse">
+38:                        <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+39:                        
+40:                    </ul>
+41:                </li>
+42:                <li class="<%= 'active' if current_page?('/home/minor') %>">
+43:                    <%= link_to "/home/minor" do %>
+44:                    <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+45:                    <% end %>
+46:                </li>
+47:            </ul>
+48:    
+49:        </div>
+50:    </nav>
+  
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/application.html.erb:30
+Started GET "/users/5" for ::1 at 2020-10-04 13:14:37 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 83)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 1352)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.6ms | Allocations: 19949)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="d-flex justify-content-center">
+                        <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+                    </div>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+                        <%= current_user.email , class: "text-white" %>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    NEOPA
+                </div>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  noticias_path do%>
+                        <i class="far fa-newspaper"></i>
+                        Todas noticias
+                    <% end %>
+                    </a></li>
+
+                    <li><a><%= link_to new_noticia_path do %>
+                        <i class="fas fa-plus"></i>
+                    Crear noticias
+                    <% end %>
+                    </a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+                    
+                </ul>
+            </li>
+            <li class="<%= 'active' if current_page?('/home/minor') %>">
+                <%= link_to "/home/minor" do %>
+                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+):
+1:    <nav class="navbar-default navbar-static-side" role="navigation">
+2:        <div class="sidebar-collapse">
+3:            <ul class="nav metismenu" id="side-menu">
+4:                <li class="nav-header">
+5:                    <div class="dropdown profile-element">
+6:                        <div class="d-flex justify-content-center">
+7:                            <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+8:                        </div>
+9:                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+10:                            <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+11:                            <%= current_user.email , class: "text-white" %>
+12:                        </a>
+13:                    </div>
+14:                    <div class="logo-element">
+15:                        NEOPA
+16:                    </div>
+17:                </li>
+18:                <li>
+19:                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+20:                    <ul class="nav nav-second-level collapse">
+21:                        <li><a><%= link_to  noticias_path do%>
+22:                            <i class="far fa-newspaper"></i>
+23:                            Todas noticias
+24:                        <% end %>
+25:                        </a></li>
+26:    
+27:                        <li><a><%= link_to new_noticia_path do %>
+28:                            <i class="fas fa-plus"></i>
+29:                        Crear noticias
+30:                        <% end %>
+31:                        </a></li>
+32:                        
+33:                    </ul>
+34:                </li>
+35:                <li>
+36:                    <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+37:                    <ul class="nav nav-second-level collapse">
+38:                        <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+39:                        
+40:                    </ul>
+41:                </li>
+42:                <li class="<%= 'active' if current_page?('/home/minor') %>">
+43:                    <%= link_to "/home/minor" do %>
+44:                    <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+45:                    <% end %>
+46:                </li>
+47:            </ul>
+48:    
+49:        </div>
+50:    </nav>
+  
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/_navigation.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+app/views/layouts/application.html.erb:30
+Started GET "/users/5" for ::1 at 2020-10-04 13:15:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 83)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 1048)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 209)
+Completed 200 OK in 93ms (Views: 84.6ms | ActiveRecord: 0.8ms | Allocations: 20101)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-10-04 13:16:07 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lnEl2lNNsWnhLRH48j+aCGNfMG/xLMTpNdphzq22qFCovLlBdq7cICbl4Pr7v51Z395crtsX96UZ+CqZez94ew=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms (ActiveRecord: 0.3ms | Allocations: 2036)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:16:07 -0500
+Processing by NoticiasController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:16:07 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 21.2ms | Allocations: 489)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 80.7ms | Allocations: 9288)
+Completed 200 OK in 116ms (Views: 112.0ms | ActiveRecord: 0.0ms | Allocations: 26184)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 13:16:36 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"HzziH2UKJQas/ilp1qXAjp7LR6g2WBIniVjunM8xQZs0bE7mNT7GYoIenKupJZ1hWyhX6Ta8PgK+vPR5z/7ErQ==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mateo5@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 499ms (ActiveRecord: 0.2ms | Allocations: 3690)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:16:36 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 985)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 644)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 55)
+Completed 200 OK in 70ms (Views: 61.5ms | ActiveRecord: 0.8ms | Allocations: 19602)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:17:45 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 990)
+  Rendered layouts/_navigation.html.erb (Duration: 2.8ms | Allocations: 983)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 209)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.3ms | Allocations: 20969)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:18:37 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 985)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 1279)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 1.4ms | Allocations: 20803)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <div class="d-flex justify-content-center">
+                        <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+                    </div>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+                        <span class="text-white"><%= current_user.email%></span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    NEOPA
+                </div>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to "Últimas noticias", noticias_path></a></li>
+
+                    <li><a><%= link_to "Crear noticia", new_noticia_path%></a></li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+                    
+                </ul>
+            </li>
+            <li class="<%= 'active' if current_page?('/home/minor') %>">
+                <%= link_to "/home/minor" do %>
+                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+):
+1:    <nav class="navbar-default navbar-static-side" role="navigation">
+2:        <div class="sidebar-collapse">
+3:            <ul class="nav metismenu" id="side-menu">
+4:                <li class="nav-header">
+5:                    <div class="dropdown profile-element">
+6:                        <div class="d-flex justify-content-center">
+7:                            <%= image_tag("profile_small.jpg",class: "rounded-circle m-b-md w-35 h-35", :alt => "rss feed") %>
+8:                        </div>
+9:                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+10:                            <%= link_to  current_user.nombres + " " + current_user.apellidos, user_path(current_user.id), class:'block m-t-xs font-bold text-capitalize' %>
+11:                            <span class="text-white"><%= current_user.email%></span>
+12:                        </a>
+13:                    </div>
+14:                    <div class="logo-element">
+15:                        NEOPA
+16:                    </div>
+17:                </li>
+18:                <li>
+19:                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
+20:                    <ul class="nav nav-second-level collapse">
+21:                        <li><a><%= link_to "Últimas noticias", noticias_path></a></li>
+22:    
+23:                        <li><a><%= link_to "Crear noticia", new_noticia_path%></a></li>
+24:                        
+25:                    </ul>
+26:                </li>
+27:                <li>
+28:                    <a href="index.html"><i class="fas fa-users"></i><span class="nav-label">Usuarios</span> <span class="fa arrow"></span></a>
+29:                    <ul class="nav nav-second-level collapse">
+30:                        <li><a><%= link_to  "Nuevo Usuario", new_user_path %></a></li>
+31:                        
+32:                    </ul>
+33:                </li>
+34:                <li class="<%= 'active' if current_page?('/home/minor') %>">
+35:                    <%= link_to "/home/minor" do %>
+36:                    <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+37:                    <% end %>
+38:                </li>
+39:            </ul>
+40:    
+41:        </div>
+42:    </nav>
+  
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:21: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:44: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:21: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:44: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:21: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:44: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:21: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:44: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:21: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:44: syntax error, unexpected end, expecting ')'
+app/views/layouts/_navigation.html.erb:21: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:21: unknown regexp option - l
+app/views/layouts/_navigation.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/_navigation.html.erb:44: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:30
+Started GET "/" for ::1 at 2020-10-04 13:19:03 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 985)
+  Rendered layouts/_navigation.html.erb (Duration: 2.8ms | Allocations: 954)
+  Rendered layouts/_topnavbar.html.erb (Duration: 1.7ms | Allocations: 209)
+Completed 200 OK in 58ms (Views: 49.4ms | ActiveRecord: 0.4ms | Allocations: 20945)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:21:04 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 985)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 945)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 209)
+Completed 200 OK in 54ms (Views: 46.4ms | ActiveRecord: 0.6ms | Allocations: 20921)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-10-04 13:21:05 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NFt2u+3PtHzy/yC91TVVg5PQkqCs7OGxGndcAzHaMwAzmoyP7OfVd3jpRSbsBON+62mkx4DM7lliTvuENEMlEA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms | Allocations: 2031)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:21:05 -0500
+Processing by NoticiasController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:21:05 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 502)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 32.4ms | Allocations: 9310)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.0ms | Allocations: 26206)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:21:42 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 501)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 46.1ms | Allocations: 9277)
+Completed 200 OK in 94ms (Views: 90.7ms | ActiveRecord: 0.0ms | Allocations: 26784)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:21:55 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 501)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 58.8ms | Allocations: 9299)
+Completed 200 OK in 98ms (Views: 93.9ms | ActiveRecord: 0.0ms | Allocations: 26809)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:25:38 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 16.5ms | Allocations: 501)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 94.8ms | Allocations: 9277)
+Completed 200 OK in 492ms (Views: 471.6ms | ActiveRecord: 0.0ms | Allocations: 26772)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:25:41 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 120)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 51.5ms | Allocations: 3643)
+Completed 200 OK in 81ms (Views: 77.8ms | ActiveRecord: 0.0ms | Allocations: 20273)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:26:03 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 495)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 46.9ms | Allocations: 3876)
+Completed 200 OK in 80ms (Views: 76.4ms | ActiveRecord: 0.0ms | Allocations: 21422)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:26:39 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 490)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3856)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.0ms | Allocations: 21402)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:26:55 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 490)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 3856)
+Completed 200 OK in 50ms (Views: 46.9ms | ActiveRecord: 0.0ms | Allocations: 21398)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:28:24 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 501)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 24.4ms | Allocations: 4494)
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.0ms | Allocations: 21895)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:29:08 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 501)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4511)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.0ms | Allocations: 21929)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:29:59 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 29.3ms | Allocations: 4495)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 0.0ms | Allocations: 21896)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:30:09 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.7ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 37.7ms | Allocations: 4492)
+Completed 200 OK in 83ms (Views: 79.9ms | ActiveRecord: 0.0ms | Allocations: 21892)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:30:20 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 501)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 25.3ms | Allocations: 4492)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 0.0ms | Allocations: 21913)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:32:15 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.8ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 31.5ms | Allocations: 4511)
+Completed 200 OK in 83ms (Views: 79.7ms | ActiveRecord: 0.0ms | Allocations: 21931)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:33:04 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 4502)
+Completed 200 OK in 52ms (Views: 48.2ms | ActiveRecord: 0.0ms | Allocations: 21909)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:33:54 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 4509)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms | Allocations: 21931)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:37:47 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 13.5ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 72.3ms | Allocations: 4507)
+Completed 500 Internal Server Error in 510ms (ActiveRecord: 0.0ms | Allocations: 23871)
+
+
+  
+ActionView::Template::Error (Missing partial devise/passwords/_nav, devise/_nav, application/_nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/mbalzav/Escritorio/Colegio-Alfred-Nobel/app/views"
+  * "/home/mbalzav/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views"
+  * "/home/mbalzav/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/home/mbalzav/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+):
+    49:      <% else %>
+    50:       
+    51: 
+    52:      <%= render "nav"%>
+    53:       <%= yield %>
+    54:       
+    55: 
+  
+app/views/layouts/application.html.erb:52
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:38:33 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4521)
+  Rendered layouts/_nav.html.erb (Duration: 0.5ms | Allocations: 159)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.0ms | Allocations: 22321)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:38:52 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 85)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 82.0ms | Allocations: 8728)
+  Rendered layouts/_nav.html.erb (Duration: 0.1ms | Allocations: 39)
+Completed 200 OK in 119ms (Views: 116.0ms | ActiveRecord: 0.0ms | Allocations: 25342)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:39:15 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 85)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 24.3ms | Allocations: 3690)
+  Rendered layouts/_nav.html.erb (Duration: 0.1ms | Allocations: 39)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms | Allocations: 19544)
+
+
+Started GET "/users/password/new" for ::1 at 2020-10-04 13:39:51 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 500)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 4506)
+  Rendered layouts/_nav.html.erb (Duration: 0.6ms | Allocations: 159)
+Completed 200 OK in 152ms (Views: 147.5ms | ActiveRecord: 0.0ms | Allocations: 22298)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:40:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 85)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 29.7ms | Allocations: 8740)
+  Rendered layouts/_nav.html.erb (Duration: 0.1ms | Allocations: 39)
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.0ms | Allocations: 25358)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-10-04 13:40:22 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 85)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.5ms | Allocations: 8443)
+  Rendered layouts/_nav.html.erb (Duration: 0.3ms | Allocations: 35)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.0ms | Allocations: 24382)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 13:40:34 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"BYd28Xy3lsNjfmrCu8zpgqspe5zrx3vy34mq/lWYIwdCoHmt1z0ASpe9dNZsPc7yOz1c6h3T5zqnZxkf9juh4A==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (47.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mateo5@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 477ms (ActiveRecord: 47.5ms | Allocations: 1812)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"BYd28Xy3lsNjfmrCu8zpgqspe5zrx3vy34mq/lWYIwdCoHmt1z0ASpe9dNZsPc7yOz1c6h3T5zqnZxkf9juh4A==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 85)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 8456)
+  Rendered layouts/_nav.html.erb (Duration: 0.1ms | Allocations: 35)
+Completed 200 OK in 380ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 24290)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 13:40:42 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ee7dSy3bdjKdXlrU+uBpkLIEYf5xKPlCybjdU1UV22Q+ydIXhlHgu2mdRMAtEU7gIhBGiIc8ZYqxVm6y9rZZgw==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mateo5@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 337ms (ActiveRecord: 0.2ms | Allocations: 1800)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"ee7dSy3bdjKdXlrU+uBpkLIEYf5xKPlCybjdU1UV22Q+ydIXhlHgu2mdRMAtEU7gIhBGiIc8ZYqxVm6y9rZZgw==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 8471)
+  Rendered layouts/_nav.html.erb (Duration: 0.2ms | Allocations: 35)
+Completed 200 OK in 364ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 24295)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-10-04 13:40:47 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qt9vt9wWiXmRWSP7nap2VfvXCkd9/zb5XyHySobcEKbt+GDrd5wf8GWaPe9KW1Ela8MtMYvrqjEnz0GrJX+SQQ==", "user"=>{"email"=>"mateo5@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar sesión"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mateo5@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 342ms (ActiveRecord: 0.2ms | Allocations: 3664)
+
+
+Started GET "/" for ::1 at 2020-10-04 13:40:48 -0500
+Processing by NoticiasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:6
+  Rendered noticias/index.html.erb within layouts/application (Duration: 63.4ms | Allocations: 988)
+  Rendered layouts/_navigation.html.erb (Duration: 8.3ms | Allocations: 945)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 209)
+Completed 200 OK in 162ms (Views: 111.0ms | ActiveRecord: 0.5ms | Allocations: 20342)
+
+
