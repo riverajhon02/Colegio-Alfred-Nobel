@@ -18,7 +18,7 @@ class NoticiasController < ApplicationController
       @noticia = Noticia.new(noticia_params)
       if @noticia.save
         redirect_to noticias_path
-        flash.notice = 'Noticia creado'
+        flash[:success] = 'Noticia creada'
       else
         render :new
       end
@@ -28,7 +28,7 @@ class NoticiasController < ApplicationController
     def update
       if @noticia.update(noticia_params)
         redirect_to noticias_path
-        flash.notice="Noticia editada"
+        flash[:notice]="Noticia editada"
       else
         render :edit
       end
@@ -37,7 +37,7 @@ class NoticiasController < ApplicationController
     def destroy
       @noticia.destroy
       redirect_to noticias_path
-      flash.alert="Noticia eliminada"
+      flash[:alert] ="Noticia eliminada"
     end
 
     def edit

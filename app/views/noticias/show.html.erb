@@ -19,11 +19,15 @@
                         <div class="col-md-6">
                             <h5>Tags:</h5>
                             <button class="btn btn-primary btn-xs" type="button">Publicado</button>
-                            <%= link_to  "Editar", edit_noticia_path(@noticia), class:'btn btn-warning btn-xs' %>
+                            <%= link_to edit_noticia_path(@noticia), class:'btn btn-warning btn-xs' do %>
+                                <%= fa_icon "pencil-alt" %>
+                                Editar
+                            <% end %>
+
                             <%= link_to noticia_path(@noticia.id),method: :delete,class: "btn btn-danger btn-xs", data: {confirm:"¿Desae eliminar este rol?"} do %>
                                 <%= fa_icon "trash" %>
                                 Eliminar
-                                <% end %>
+                            <% end %>
                         </div>
                        
                     </div>
