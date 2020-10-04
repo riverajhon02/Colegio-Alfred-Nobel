@@ -18895,6 +18895,7 @@ Processing by NoticiasController#index as HTML
 Completed 200 OK in 56ms (Views: 54.5ms | ActiveRecord: 0.3ms | Allocations: 16884)
 
 
+<<<<<<< HEAD
   [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Migrating to DeviseCreateModels (20201004043501)
@@ -21545,5 +21546,529 @@ Processing by UsersController#show as HTML
   Rendered layouts/_navigation.html.erb (Duration: 4.0ms | Allocations: 659)
   Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 55)
 Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.5ms | Allocations: 17608)
+=======
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/mbalzav/.rbenv/versions/2.6.2/bin/rake:23)
+  [1m[35m (51.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (28.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-10-04 10:27:47 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 212)
+Started GET "/" for ::1 at 2020-10-04 10:27:49 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Started GET "/" for ::1 at 2020-10-04 10:28:14 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 232)
+  Rendered layouts/_navigation.html.erb (Duration: 23.9ms | Allocations: 876)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 104)
+Completed 200 OK in 7668ms (Views: 7660.7ms | ActiveRecord: 0.0ms | Allocations: 400075)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:28:27 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.8ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 56.0ms | Allocations: 5805)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 559)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 106ms (Views: 80.1ms | ActiveRecord: 4.2ms | Allocations: 22932)
+
+
+Started GET "/noticias/3" for ::1 at 2020-10-04 10:28:37 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 18.3ms | Allocations: 467)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 559)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 83ms (Views: 72.6ms | ActiveRecord: 0.5ms | Allocations: 17605)
+
+
+Started GET "/noticias/3/edit" for ::1 at 2020-10-04 10:28:46 -0500
+Processing by NoticiasController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/edit.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 311.7ms | Allocations: 27889)
+  Rendered noticias/edit.html.erb within layouts/application (Duration: 317.3ms | Allocations: 28185)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 558)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 385ms (Views: 377.0ms | ActiveRecord: 0.3ms | Allocations: 44897)
+
+
+Started GET "/noticias/new" for ::1 at 2020-10-04 10:28:53 -0500
+Processing by NoticiasController#new as HTML
+  Rendering noticias/new.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 40.2ms | Allocations: 7624)
+  Rendered noticias/new.html.erb within layouts/application (Duration: 83.5ms | Allocations: 7773)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 558)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 152ms (Views: 147.8ms | ActiveRecord: 0.0ms | Allocations: 24000)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:28:59 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 835)
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 96ms (Views: 92.7ms | ActiveRecord: 0.5ms | Allocations: 16898)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:30:52 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (82.7ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 129.0ms | Allocations: 1048)
+  Rendered layouts/_navigation.html.erb (Duration: 4.3ms | Allocations: 807)
+  Rendered layouts/_topnavbar.html.erb (Duration: 12.2ms | Allocations: 98)
+Completed 200 OK in 510ms (Views: 389.3ms | ActiveRecord: 82.7ms | Allocations: 18819)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:33:37 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1043)
+  Rendered layouts/_navigation.html.erb (Duration: 16.6ms | Allocations: 1258)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 98)
+Completed 200 OK in 104ms (Views: 97.7ms | ActiveRecord: 0.5ms | Allocations: 19252)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:33:56 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1043)
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 806)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms | Allocations: 18804)
+
+
+Started GET "/noticias/3" for ::1 at 2020-10-04 10:34:09 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (17.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 20.8ms | Allocations: 440)
+  Rendered layouts/_navigation.html.erb (Duration: 4.1ms | Allocations: 559)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 119ms (Views: 81.4ms | ActiveRecord: 17.2ms | Allocations: 17136)
+
+
+Started GET "/noticias/3/edit" for ::1 at 2020-10-04 10:34:11 -0500
+Processing by NoticiasController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (1.0ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/edit.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 115.8ms | Allocations: 7835)
+  Rendered noticias/edit.html.erb within layouts/application (Duration: 118.9ms | Allocations: 8128)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 558)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 261ms (Views: 251.8ms | ActiveRecord: 1.0ms | Allocations: 24831)
+
+
+Started GET "/noticias/3" for ::1 at 2020-10-04 10:36:03 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 534)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 806)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.2ms | Allocations: 18793)
+
+
+Started GET "/noticias/3/edit" for ::1 at 2020-10-04 10:36:05 -0500
+Processing by NoticiasController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (0.6ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/edit.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 52.5ms | Allocations: 7835)
+  Rendered noticias/edit.html.erb within layouts/application (Duration: 55.2ms | Allocations: 8128)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 558)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 88ms (Views: 79.5ms | ActiveRecord: 0.6ms | Allocations: 24823)
+
+
+Started GET "/noticias/3" for ::1 at 2020-10-04 10:37:45 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mNoticia Load (1.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 533)
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 806)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 64ms (Views: 54.5ms | ActiveRecord: 1.1ms | Allocations: 18785)
+
+
+Started GET "/noticias/new" for ::1 at 2020-10-04 10:38:01 -0500
+Processing by NoticiasController#new as HTML
+  Rendering noticias/new.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 25.8ms | Allocations: 7755)
+  Rendered noticias/new.html.erb within layouts/application (Duration: 66.6ms | Allocations: 8040)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.0ms | Allocations: 24248)
+
+
+Started POST "/noticias" for ::1 at 2020-10-04 10:38:36 -0500
+Processing by NoticiasController#create as HTML
+  Parameters: {"authenticity_token"=>"tgmrXojeNt+cwcdRh4YFTJT5bmaDrnw3iY5cIO/Cn2wcW0h0OPilwRw0mT2IwZlQ5i/qODoYWo9S/SXUmT0TNw==", "noticia"=>{"fecha(1i)"=>"2020", "fecha(2i)"=>"10", "fecha(3i)"=>"4", "titulo"=>"Dia de la madre", "descripcion"=>"Un dia muy especial", "informacion"=>"Se espera la participación de todos"}, "commit"=>"Create Noticia"}
+  [1m[35m (14.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/noticias_controller.rb:19:in `create'
+  [1m[36mNoticia Create (69.3ms)[0m  [1m[32mINSERT INTO "noticias" ("titulo", "descripcion", "informacion", "created_at", "updated_at", "fecha") VALUES (?, ?, ?, ?, ?, ?)[0m  [["titulo", "Dia de la madre"], ["descripcion", "Un dia muy especial"], ["informacion", "Se espera la participación de todos"], ["created_at", "2020-10-04 15:38:36.971964"], ["updated_at", "2020-10-04 15:38:36.971964"], ["fecha", "2020-10-04"]]
+  ↳ app/controllers/noticias_controller.rb:19:in `create'
+  [1m[35m (141.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/noticias_controller.rb:19:in `create'
+Redirected to http://localhost:3000/noticias
+Completed 302 Found in 248ms (ActiveRecord: 225.3ms | Allocations: 3854)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:38:37 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1105)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 559)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.2ms | Allocations: 17328)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:46:59 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/mbalzav/Escritorio/Colegio-Alfred-Nobel/app/helpers/application_helper.rb:53: syntax error, unexpected end, expecting end-of-input):
+  
+app/helpers/application_helper.rb:53: syntax error, unexpected end, expecting end-of-input
+app/helpers/application_helper.rb:53: syntax error, unexpected end, expecting end-of-input
+app/helpers/application_helper.rb:53: syntax error, unexpected end, expecting end-of-input
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/noticias_controller.rb:1:in `<main>'
+Started GET "/noticias" for ::1 at 2020-10-04 10:47:48 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 62.3ms | Allocations: 5644)
+  Rendered layouts/_navigation.html.erb (Duration: 23.5ms | Allocations: 814)
+  Rendered layouts/_topnavbar.html.erb (Duration: 27.9ms | Allocations: 98)
+Completed 200 OK in 6371ms (Views: 6311.7ms | ActiveRecord: 3.5ms | Allocations: 207218)
+
+
+Started GET "/noticias/new" for ::1 at 2020-10-04 10:48:08 -0500
+Processing by NoticiasController#new as HTML
+  Rendering noticias/new.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 60.0ms | Allocations: 8400)
+  Rendered noticias/new.html.erb within layouts/application (Duration: 83.1ms | Allocations: 8686)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 109ms (Views: 105.5ms | ActiveRecord: 0.0ms | Allocations: 23868)
+
+
+Started POST "/noticias" for ::1 at 2020-10-04 10:48:22 -0500
+Processing by NoticiasController#create as HTML
+  Parameters: {"authenticity_token"=>"xanui+2kdOme6BBmvR335yVu3Rk0nr7rS/QjFVqpMU5v+w2hXYLn9x4dTgqyWmv7V7hZR40omFOQh1rhLFa9FQ==", "noticia"=>{"fecha(1i)"=>"2020", "fecha(2i)"=>"10", "fecha(3i)"=>"4", "titulo"=>"Dia de la madre", "descripcion"=>"Un dia muy especial", "informacion"=>"Se espera la participación de todos"}, "commit"=>"Create Noticia"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/noticias_controller.rb:19:in `create'
+  [1m[36mNoticia Create (75.4ms)[0m  [1m[32mINSERT INTO "noticias" ("titulo", "descripcion", "informacion", "created_at", "updated_at", "fecha") VALUES (?, ?, ?, ?, ?, ?)[0m  [["titulo", "Dia de la madre"], ["descripcion", "Un dia muy especial"], ["informacion", "Se espera la participación de todos"], ["created_at", "2020-10-04 15:48:22.579243"], ["updated_at", "2020-10-04 15:48:22.579243"], ["fecha", "2020-10-04"]]
+  ↳ app/controllers/noticias_controller.rb:19:in `create'
+  [1m[35m (135.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/noticias_controller.rb:19:in `create'
+Redirected to http://localhost:3000/noticias
+Completed 302 Found in 272ms (ActiveRecord: 211.2ms | Allocations: 3667)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:48:22 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (4.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 950)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 80ms (Views: 73.6ms | ActiveRecord: 4.1ms | Allocations: 16180)
+
+
+Started GET "/noticias/8" for ::1 at 2020-10-04 10:48:48 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 43.5ms | Allocations: 530)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 559)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 110ms (Views: 102.8ms | ActiveRecord: 0.5ms | Allocations: 16314)
+
+
+Started GET "/noticias/8/edit" for ::1 at 2020-10-04 10:48:50 -0500
+Processing by NoticiasController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/edit.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 71.0ms | Allocations: 7599)
+  Rendered noticias/edit.html.erb within layouts/application (Duration: 105.0ms | Allocations: 7754)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 558)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 166ms (Views: 157.4ms | ActiveRecord: 0.5ms | Allocations: 23414)
+
+
+Started PATCH "/noticias/8" for ::1 at 2020-10-04 10:48:59 -0500
+Processing by NoticiasController#update as HTML
+  Parameters: {"authenticity_token"=>"vd2ZwGoHTtedVOxsQrZsT01Wdws/DUDf+oroYE+B3zAXj3rq2iHdyR2hsgBN8fBTP4DzVYa7Zmch+ZGUOX5Taw==", "noticia"=>{"fecha(1i)"=>"2020", "fecha(2i)"=>"10", "fecha(3i)"=>"4", "titulo"=>"Dia de la madre", "descripcion"=>"Un dia muy especial para las madres", "informacion"=>"Se espera la participación de todos"}, "commit"=>"Update Noticia", "id"=>"8"}
+  [1m[36mNoticia Load (0.6ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/noticias_controller.rb:29:in `update'
+  [1m[36mNoticia Update (0.7ms)[0m  [1m[33mUPDATE "noticias" SET "descripcion" = ?, "updated_at" = ? WHERE "noticias"."id" = ?[0m  [["descripcion", "Un dia muy especial para las madres"], ["updated_at", "2020-10-04 15:48:59.509836"], ["id", 8]]
+  ↳ app/controllers/noticias_controller.rb:29:in `update'
+  [1m[35m (84.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/noticias_controller.rb:29:in `update'
+Redirected to http://localhost:3000/noticias
+Completed 302 Found in 627ms (ActiveRecord: 85.9ms | Allocations: 4344)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:49:00 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 949)
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.5ms | Allocations: 15997)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:53:19 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.8ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 76.8ms | Allocations: 5464)
+  Rendered layouts/_navigation.html.erb (Duration: 4.4ms | Allocations: 560)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 396ms (Views: 292.3ms | ActiveRecord: 3.2ms | Allocations: 21035)
+
+
+Started GET "/noticias/5" for ::1 at 2020-10-04 10:53:25 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNoticia Load (1.3ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 221)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 65ms (Views: 50.4ms | ActiveRecord: 1.3ms | Allocations: 15852)
+
+
+Started GET "/noticias/5/edit" for ::1 at 2020-10-04 10:53:27 -0500
+Processing by NoticiasController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/edit.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 56.1ms | Allocations: 8159)
+  Rendered noticias/edit.html.erb within layouts/application (Duration: 56.7ms | Allocations: 8222)
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 190ms (Views: 182.3ms | ActiveRecord: 0.4ms | Allocations: 23743)
+
+
+Started PATCH "/noticias/5" for ::1 at 2020-10-04 10:53:29 -0500
+Processing by NoticiasController#update as HTML
+  Parameters: {"authenticity_token"=>"cLx9THP0tkHqdHKmuO4Df3toXhW6d5Fr0YOwOlE/41va7p5mw9IlX2qBLMq3qZ9jCb7aSwPBt9MK8MnOJ8BvAA==", "noticia"=>{"fecha(1i)"=>"2020", "fecha(2i)"=>"10", "fecha(3i)"=>"3", "titulo"=>"Dia del padre", "descripcion"=>"ksfjkdjf", "informacion"=>"dia del apdrekndskfhskdfksd"}, "commit"=>"Update Noticia", "id"=>"5"}
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+Redirected to http://localhost:3000/noticias
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1224)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:53:29 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 949)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 0.5ms | Allocations: 15989)
+
+
+Started GET "/noticias/4" for ::1 at 2020-10-04 10:53:41 -0500
+Processing by NoticiasController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  Rendering noticias/show.html.erb within layouts/application
+  Rendered noticias/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 217)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 61ms (Views: 54.6ms | ActiveRecord: 0.5ms | Allocations: 15730)
+
+
+Started DELETE "/noticias/4" for ::1 at 2020-10-04 10:53:47 -0500
+Processing by NoticiasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"78/v1NG8+TkolcPmpdy6Jx0y97ddIoqA13EaNhb8YXVFnQz+YZpqJ6hgnYqqmyY7b+Rz6eSUrDgMAmPCYAPtLg==", "id"=>"4"}
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias" WHERE "noticias"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/noticias_controller.rb:47:in `set_noticia'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/noticias_controller.rb:38:in `destroy'
+  [1m[36mNoticia Destroy (98.3ms)[0m  [1m[31mDELETE FROM "noticias" WHERE "noticias"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/noticias_controller.rb:38:in `destroy'
+  [1m[35m (193.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/noticias_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/noticias
+Completed 302 Found in 306ms (ActiveRecord: 291.8ms | Allocations: 3561)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:53:47 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 887)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 557)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.5ms | Allocations: 15933)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:57:58 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 1110)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 808)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.9ms | Allocations: 98)
+Completed 200 OK in 175ms (Views: 136.6ms | ActiveRecord: 0.4ms | Allocations: 17863)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 10:58:30 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.1ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1105)
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 808)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.1ms | Allocations: 17846)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 11:01:26 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.2ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1105)
+  Rendered layouts/_navigation.html.erb (Duration: 37.2ms | Allocations: 853)
+  Rendered layouts/_topnavbar.html.erb (Duration: 3.0ms | Allocations: 98)
+Completed 200 OK in 95ms (Views: 93.5ms | ActiveRecord: 0.2ms | Allocations: 17896)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 11:01:30 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 892)
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 562)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 76ms (Views: 72.4ms | ActiveRecord: 0.5ms | Allocations: 15927)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 11:02:30 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.6ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1105)
+  Rendered layouts/_navigation.html.erb (Duration: 3.6ms | Allocations: 885)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 67ms (Views: 63.9ms | ActiveRecord: 0.6ms | Allocations: 17928)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 11:03:04 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.4ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1105)
+  Rendered layouts/_navigation.html.erb (Duration: 5.5ms | Allocations: 883)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 98)
+Completed 200 OK in 80ms (Views: 75.9ms | ActiveRecord: 0.4ms | Allocations: 17923)
+
+
+Started GET "/noticias" for ::1 at 2020-10-04 11:03:23 -0500
+Processing by NoticiasController#index as HTML
+  Rendering noticias/index.html.erb within layouts/application
+  [1m[36mNoticia Load (0.5ms)[0m  [1m[34mSELECT "noticias".* FROM "noticias"[0m
+  ↳ app/views/noticias/index.html.erb:4
+  Rendered noticias/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 892)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 565)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 73ms (Views: 69.5ms | ActiveRecord: 0.5ms | Allocations: 15922)
+
+
+Started GET "/noticias/new" for ::1 at 2020-10-04 11:03:30 -0500
+Processing by NoticiasController#new as HTML
+  Rendering noticias/new.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 33.4ms | Allocations: 7816)
+  Rendered noticias/new.html.erb within layouts/application (Duration: 43.9ms | Allocations: 8102)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 563)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.0ms | Allocations: 23281)
+
+
+Started GET "/noticias/new" for ::1 at 2020-10-04 11:04:45 -0500
+Processing by NoticiasController#new as HTML
+  Rendering noticias/new.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 74.3ms | Allocations: 7827)
+  Rendered noticias/new.html.erb within layouts/application (Duration: 77.0ms | Allocations: 8118)
+  Rendered layouts/_navigation.html.erb (Duration: 3.7ms | Allocations: 880)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 98)
+Completed 200 OK in 123ms (Views: 120.0ms | ActiveRecord: 0.0ms | Allocations: 24955)
+
+
+Started GET "/noticias/new" for ::1 at 2020-10-04 11:06:04 -0500
+Processing by NoticiasController#new as HTML
+  Rendering noticias/new.html.erb within layouts/application
+  Rendered noticias/_form.html.erb (Duration: 14.1ms | Allocations: 7786)
+  Rendered noticias/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 8071)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 880)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 24897)
+>>>>>>> 0bf40cb076870400cbd265e4ee35e46e507964b0
 
 

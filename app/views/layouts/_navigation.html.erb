@@ -19,8 +19,17 @@
             <li>
                 <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Noticias</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a><%= link_to  "Ultimas Noticias", noticias_path %></a></li>
-                    <li><%= link_to  "Crear Noticia", new_noticia_path %></a></li>
+                    <li><a><%= link_to  noticias_path do%>
+                        <i class="far fa-newspaper"></i>
+                        Todas noticias
+                    <% end %>
+                    </a></li>
+
+                    <li><a><%= link_to new_noticia_path do %>
+                        <i class="fas fa-plus"></i>
+                    Crear noticias
+                    <% end %>
+                    </a></li>
                     
                 </ul>
             </li>
